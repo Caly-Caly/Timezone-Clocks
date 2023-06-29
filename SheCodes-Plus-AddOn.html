@@ -6,8 +6,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>SheCodes Time-Zone Dropdown</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
+    <h1>Time Zone Clocks</h1>
     <select name="cities" id="cities">
       <option value="">Select a city</option>
       <option value="paris">Paris 🇫🇷</option>
@@ -20,39 +22,6 @@
         sourced on GitHub.</a
       >
     </footer>
-    <script>
-      function citySelector(event) {
-        if (event.target.value.length > 0) {
-        }
-        if (event.target.value === "paris") {
-          alert(`${parisTime}`);
-        }
-        if (event.target.value === "tokyo") {
-          alert(`${toykoTime}`);
-        }
-        if (event.target.value === "sydney") {
-          alert(`${sydneyTime}`);
-        }
-      }
-
-      let parisTime = moment()
-        .tz("Europe/Paris")
-        .format(
-          "[It is currently] dddd, MMMM Do, YYYY hh:mm A [Europe/Paris.]"
-        );
-
-      let toykoTime = moment()
-        .tz("Asia/Tokyo")
-        .format("[It is currently] dddd, MMMM Do, YYYY hh:mm A [Asia/Tokyo.]");
-
-      let sydneyTime = moment()
-        .tz("Australia/Sydney")
-        .format(
-          "[It is currently] dddd, MMMM Do, YYYY hh:mm A [Australia/Sydney.]"
-        );
-
-      let citySelection = document.querySelector("#cities");
-      citySelection.addEventListener("change", citySelector);
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>
