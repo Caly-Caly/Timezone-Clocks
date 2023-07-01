@@ -23,7 +23,7 @@ footer {
 select {
   border-radius: 5px;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
   width: 100%;
 }
@@ -49,17 +49,23 @@ select {
   border: none;
 }
 
-.date {
+.date-row1,
+.date-row2,
+.date-row3,
+.date-row4 {
   opacity: 0.7;
 }
 
-.time {
+.time-row1,
+.time-row2,
+.time-row3,
+.time-row4 {
   font-size: 35px;
   font-weight: bold;
 }
 
-.time small {
-  font-size: 24px;
+small {
+  font-size: 22px;
   line-height: 46px;
   vertical-align: middle;
 }
