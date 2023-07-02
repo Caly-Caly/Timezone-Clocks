@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Noto+Sans:wght@200;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>SheCodes Time-Zone Dropdown</title>
@@ -12,40 +18,42 @@
     <div class="container">
       <h1>Time Zone Clocks</h1>
 
-      <select name="citylist" id="citylist">
+      <select name="citylist" id="cityList">
         <option value="">Select a city</option>
-        <option value="paris">Paris 🇫🇷</option>
-        <option value="tokyo">Tokyo 🇯🇵</option>
-        <option value="sydney">Sydney 🇦🇺</option>
+        <option value="Europe/Athens">Athens</option>
+        <option value="America/Vancouver">Vancouver</option>
+        <option value="Pacific/Fiji">Fiji</option>
       </select>
 
-      <div class="city" id="ny">
-        <div>
-          <h2>New York</h2>
-          <div class="date-row1"></div>
+      <div id="cities">
+        <div class="city" id="ny">
+          <div>
+            <h2>New York</h2>
+            <div class="date-row1"></div>
+          </div>
+          <div class="time-row1"></div>
         </div>
-        <div class="time-row1"></div>
-      </div>
-      <div class="city" id="berlin">
-        <div>
-          <h2>Berlin</h2>
-          <div class="date-row2"></div>
+        <div class="city" id="berlin">
+          <div>
+            <h2>Berlin</h2>
+            <div class="date-row2"></div>
+          </div>
+          <div class="time-row2"></div>
         </div>
-        <div class="time-row2"></div>
-      </div>
-      <div class="city" id="tokyo">
-        <div>
-          <h2>Tokyo</h2>
-          <div class="date-row3"></div>
+        <div class="city" id="tokyo">
+          <div>
+            <h2>Tokyo</h2>
+            <div class="date-row3"></div>
+          </div>
+          <div class="time-row3"></div>
         </div>
-        <div class="time-row3"></div>
-      </div>
-      <div class="city" id="sydney">
-        <div>
-          <h2>Sydney</h2>
-          <div class="date-row4"></div>
+        <div class="city" id="sydney">
+          <div>
+            <h2>Sydney</h2>
+            <div class="date-row4"></div>
+          </div>
+          <div class="time-row4"></div>
         </div>
-        <div class="time-row4"></div>
       </div>
     </div>
     <footer>

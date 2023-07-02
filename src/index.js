@@ -32,47 +32,75 @@
 function refreshTime() {
   // NY Timing
   let nyElement = document.querySelector("#ny");
-  let nyDate = nyElement.querySelector(".date-row1");
-  let nyTimeElement = nyElement.querySelector(".time-row1");
-  let nyTime = moment();
+  if (nyElement) {
+    let nyDate = nyElement.querySelector(".date-row1");
+    let nyTimeElement = nyElement.querySelector(".time-row1");
+    let nyTime = moment();
 
-  nyDate.innerHTML = nyTime.format("MMMM Do, YYYY");
-  nyTimeElement.innerHTML = nyTime
-    .tz("America/New_York")
-    .format("hh:mm:ss [<small>]A[</small>]");
+    nyDate.innerHTML = nyTime.format("MMMM Do, YYYY");
+    nyTimeElement.innerHTML = nyTime
+      .tz("America/New_York")
+      .format("hh:mm:ss [<small>]A[</small>]");
+  }
 
   // Berlin
   let berlinElement = document.querySelector("#berlin");
-  let berlinDate = berlinElement.querySelector(".date-row2");
-  let berlinTimeElement = berlinElement.querySelector(".time-row2");
-  let berlinTime = moment();
+  if (berlinElement) {
+    let berlinDate = berlinElement.querySelector(".date-row2");
+    let berlinTimeElement = berlinElement.querySelector(".time-row2");
+    let berlinTime = moment();
 
-  berlinDate.innerHTML = berlinTime.format("MMMM Do, YYYY");
-  berlinTimeElement.innerHTML = berlinTime
-    .tz("Europe/Berlin")
-    .format("hh:mm:ss [<small>]A[</small>]");
+    berlinDate.innerHTML = berlinTime.format("MMMM Do, YYYY");
+    berlinTimeElement.innerHTML = berlinTime
+      .tz("Europe/Berlin")
+      .format("hh:mm:ss [<small>]A[</small>]");
+  }
 
   //Tokyo Timezone
   let tokyoElement = document.querySelector("#tokyo");
-  let tokyoDate = tokyoElement.querySelector(".date-row3");
-  let tokyoTimeElement = tokyoElement.querySelector(".time-row3");
-  let tokyoTime = moment();
+  if (tokyoElement) {
+    let tokyoDate = tokyoElement.querySelector(".date-row3");
+    let tokyoTimeElement = tokyoElement.querySelector(".time-row3");
+    let tokyoTime = moment();
 
-  tokyoDate.innerHTML = tokyoTime.format("MMMM Do, YYYY");
-  tokyoTimeElement.innerHTML = tokyoTime
-    .tz("Asia/Tokyo")
-    .format("hh:mm:ss [<small>]A[</small>]");
+    tokyoDate.innerHTML = tokyoTime.format("MMMM Do, YYYY");
+    tokyoTimeElement.innerHTML = tokyoTime
+      .tz("Asia/Tokyo")
+      .format("hh:mm:ss [<small>]A[</small>]");
+  }
 
   // Sydney
   let sydneyElement = document.querySelector("#sydney");
-  let sydneyDate = sydneyElement.querySelector(".date-row4");
-  let sydneyTimeElement = sydneyElement.querySelector(".time-row4");
-  let sydneyTime = moment();
+  if (sydneyElement) {
+    let sydneyDate = sydneyElement.querySelector(".date-row4");
+    let sydneyTimeElement = sydneyElement.querySelector(".time-row4");
+    let sydneyTime = moment();
 
-  sydneyDate.innerHTML = sydneyTime.format("MMMM Do, YYYY");
-  sydneyTimeElement.innerHTML = sydneyTime
-    .tz("Australia/Sydney")
-    .format("hh:mm:ss [<small>]A[</small>]");
+    sydneyDate.innerHTML = sydneyTime.format("MMMM Do, YYYY");
+    sydneyTimeElement.innerHTML = sydneyTime
+      .tz("Australia/Sydney")
+      .format("hh:mm:ss [<small>]A[</small>]");
+  }
 }
+function updateCityDisplay(event) {
+  let timeZone = event.target.value;
+  let cityName = timeZone.replace("_", "").split("/")[1];
+  let cityTime = moment().tz(timeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date-row1">${cityTime.format("MMMM Do, YYYY")}</div>
+          </div>
+          <div class="time-row1">${cityTime.format(
+            "hh:mm:ss"
+          )} <small>${cityTime.format("A")}</small></div>
+        </div>`;
+}
+
 refreshTime();
 setInterval(refreshTime, 1000);
+
+let citiesSelect = document.querySelector("#cityList");
+
+citiesSelect.addEventListener("change", updateCityDisplay);
