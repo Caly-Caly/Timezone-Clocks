@@ -1,5 +1,14 @@
 body {
-  background-color: #cacfd3;
+  background-color: #e0e0e0;
+  background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      #e0e0e0 25%,
+      #e4e0e0 75%,
+      transparent 100%
+    ),
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2N89+7dfwYsQEhIiBEkzDgkFGDzAbIY2Cv4AACvrBgJjYNGfwAAAABJRU5ErkJggg==);
+  color: #283739;
   font-family: "Noto Sans", sans-serif;
 }
 
@@ -38,7 +47,7 @@ select {
 }
 
 .city {
-  border-bottom: 1px dashed rgba(128, 128, 128, 0.2);
+  border-bottom: 1px dashed #283739;
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
@@ -53,18 +62,21 @@ select {
 .date-row2,
 .date-row3,
 .date-row4 {
-  opacity: 0.7;
+  opacity: 0.8;
+  color: #a2c11c;
 }
 
 .time-row1,
 .time-row2,
 .time-row3,
 .time-row4 {
+  color: #2c5d63;
   font-size: 35px;
   font-weight: bold;
 }
 
 small {
+  color: #a2c11c;
   font-size: 22px;
   line-height: 46px;
   vertical-align: middle;

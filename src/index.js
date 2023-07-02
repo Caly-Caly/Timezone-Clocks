@@ -98,12 +98,12 @@ function updateCityDisplay(event) {
           <div class="time-row1">${cityTime.format(
             "hh:mm:ss"
           )} <small>${cityTime.format("A")}</small></div>
-        </div>`;
+        </div>
+        <a href="/"> All cities</a>`;
 }
 
 refreshTime();
 setInterval(refreshTime, 1000);
-setInterval(updateCityDisplay, 1000);
 
 let citiesSelect = document.querySelector("#cityList");
 
