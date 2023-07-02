@@ -84,7 +84,10 @@ function refreshTime() {
 }
 function updateCityDisplay(event) {
   let timeZone = event.target.value;
-  let cityName = timeZone.replace("_", "").split("/")[1];
+  if (timeZone === "current") {
+    timeZone = moment.tz.guess();
+  }
+  let cityName = timeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(timeZone);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `<div class="city">
@@ -100,6 +103,7 @@ function updateCityDisplay(event) {
 
 refreshTime();
 setInterval(refreshTime, 1000);
+setInterval(updateCityDisplay, 1000);
 
 let citiesSelect = document.querySelector("#cityList");
 
