@@ -10,6 +10,7 @@ body {
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAIklEQVQoU2N89+7dfwYsQEhIiBEkzDgkFGDzAbIY2Cv4AACvrBgJjYNGfwAAAABJRU5ErkJggg==);
   color: #283739;
   font-family: "Noto Sans", sans-serif;
+  padding: 20px;
 }
 
 h1 {
@@ -26,6 +27,7 @@ h2 {
 footer {
   color: rgba(0, 0, 0, 0.8);
   font-size: 15px;
+  margin: 10px;
   text-align: center;
 }
 
@@ -44,6 +46,7 @@ select {
   margin: 20px auto;
   max-width: 525px;
   padding: 30px;
+ 
 }
 
 .city {
@@ -64,6 +67,10 @@ select {
 .date-row4 {
   opacity: 0.8;
   color: #a2c11c;
+}
+
+.gap{
+  margin-top: 10px;
 }
 
 .time-row1,
